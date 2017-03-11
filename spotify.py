@@ -54,6 +54,12 @@ def callback():
     # invalid state, abort
     else:
         abort(403)
+        
+@app.route("/twts/")
+@app.route("/twts/<name>/")
+def twts(name = None):
+    twt_list = get_tweets(name)
+    return render_template('twt.html', twt_list=twt_list)
 
 # Use code to obtain access token, refresh token
 def get_token(code):
@@ -84,6 +90,11 @@ def get_topArtist(access_token):
 
 def generateRandomString(len):
     return ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(len))
+
+def get_tweets(keyword):
+    twt_list = []
+    twt_list = api.search(q = keyword, count = 20)
+    return twt_list
 
 if __name__ == "__main__":
     app.run(debug=True)
