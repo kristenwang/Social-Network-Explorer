@@ -1,0 +1,89 @@
+from flask import Flask, abort, request, render_template
+from uuid import uuid4
+import requests
+import requests.auth
+import urllib
+import string
+import random
+
+SPOTIFY_APP_ID = 'b9d97275936943d6965ffbdd5e402238'
+SPOTIFY_REDIRECT_URI = 'http://localhost:5000/callback'
+SPOTIFY_CLIENT_SECRET = '8ac92255fb684073b02f61e38f96cc34'
+RANDOM_STATE = ''
+
+app = Flask(__name__)
+
+# Prompt login
+@app.route('/')
+def homepage():
+    text = '<a href="%s">Authenticate with spotify</a>'
+    return render_template("index.html", requestURL=make_authorization_url())
+
+# Create authorzation url
+def make_authorization_url():
+    global RANDOM_STATE
+    RANDOM_STATE = generateRandomString(16)
+    params = {"client_id": SPOTIFY_APP_ID,
+              "response_type": "code",
+              "redirect_uri": SPOTIFY_REDIRECT_URI,
+              "state": RANDOM_STATE,
+              "scope": "user-top-read"
+              }
+    url = "https://accounts.spotify.com/authorize?" + urllib.parse.urlencode(params)
+    return url
+
+# Callback page
+@app.route('/callback')
+def callback():
+    code = request.args.get('code')
+    state = request.args.get('state', '')
+    # Check state, get access token if valid
+    if state == RANDOM_STATE:
+        artists = []
+        token_json = get_token(code)
+        user_info = get_userInfo(token_json['access_token'])
+        artist_infoa = get_topArtist(token_json['access_token'])
+        artist_info = artist_infoa['items']
+        for i, item in enumerate(artist_infoa['items']):
+            print (i, item['name'])
+        #    artists.append(item['name'])
+        #print(artists)
+        profile_img = user_info['images']
+        return render_template("profile.html",user_json=user_info, profile_img=profile_img, artist_json=artist_info)
+    # invalid state, abort
+    else:
+        abort(403)
+
+# Use code to obtain access token, refresh token
+def get_token(code):
+    client_auth = requests.auth.HTTPBasicAuth(SPOTIFY_APP_ID, SPOTIFY_CLIENT_SECRET)
+    headers = {'Authorization': 'Basic '}
+    post_data = {"grant_type": "authorization_code",
+                 "code": code,
+                 "redirect_uri": SPOTIFY_REDIRECT_URI}
+    response = requests.post("https://accounts.spotify.com/api/token",
+                             auth=client_auth,
+                             headers=headers,
+                             data=post_data)
+    token_json = response.json()
+    return token_json
+
+# Use access token to get user info
+def get_userInfo(access_token):
+    headers = {'Authorization': 'Bearer ' + access_token}
+    response = requests.get("https://api.spotify.com/v1/me", headers=headers)
+    me_json = response.json()
+    return me_json
+
+def get_topArtist(access_token):
+    headers = {'Authorization': 'Bearer ' + access_token}
+    response = requests.get("https://api.spotify.com/v1/me/top/artists?limit=50&offset=0", headers=headers)
+    artist_json = response.json()
+    #print(artist_json)
+    return artist_json
+
+def generateRandomString(len):
+    return ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(len))
+
+if __name__ == "__main__":
+    app.run(debug=True)
