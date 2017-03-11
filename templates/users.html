@@ -1,0 +1,22 @@
+<!doctype html>
+<title>Search Results</title>
+<table class="table">
+    <thead>
+        <tr>
+             <td>User Name</td>
+             <td>Followers</td>
+             <td>Location</td>
+       </tr>
+    </thead>
+    <tbody>
+    {% for users in user_list %}
+      {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.followers_count }}</td>
+            <td>{{ user.location }}</td>
+       </tr>
+      {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>
