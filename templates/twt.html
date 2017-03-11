@@ -3,13 +3,15 @@
 <table class="table">
     <thead>
         <tr>
+             <td>Num. </td>
              <td>Tweets</td>
        </tr>
     </thead>
     <tbody>
-    {% for twt in twt_list %}
+    {% for i in range(20) %}
         <tr>
-            <td>{{ twt.text }}</td>
+            <td>{{ i+1 }}</td>
+            <td>{{ twt_list[i].text }}</td>
        </tr>
     {% endfor %}
     </tbody>
