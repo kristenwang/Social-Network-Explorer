@@ -44,12 +44,13 @@ def callback():
         user_info = get_userInfo(token_json['access_token'])
         artist_infoa = get_topArtist(token_json['access_token'])
         artist_info = artist_infoa['items']
-
+        url_list = []
         for item in artist_info:
             print (item['name'])
-            
+            url_list.append(urllib.parse.quote_plus(item['name']))
+
         profile_img = user_info['images']
-        return render_template("profile.html",user_json=user_info, profile_img=profile_img, artist_json=artist_info)
+        return render_template("profile.html",user_json=user_info, profile_img=profile_img, artist_json=artist_info, atrist_url=url_list)
     # invalid state, abort
     else:
         abort(403)
