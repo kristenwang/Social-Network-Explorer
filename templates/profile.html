@@ -30,7 +30,8 @@
       <!--<dl class="col-md-4" id="demo">-->
       {% for item in range(0, 50)%}
          <div class="col-md-4">
-         <dt>{{item+1}} </dt><dd><a href={{"http://localhost:5000/twts/" + atrist_url[item]}} role="button">{{ artist_json[item]['name'] }}</a></dd>
+           <img width = "150" height = "150" src="{{image_list[item]}}"/>
+           <dt>{{item+1}} </dt><dd><a href={{"http://localhost:5000/twts/" + atrist_url[item]}} role="button">{{ artist_json[item]['name'] }}</a></dd>
          </div>
       {% endfor %}
       <!--</dl>-->
