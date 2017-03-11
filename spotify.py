@@ -44,10 +44,10 @@ def callback():
         user_info = get_userInfo(token_json['access_token'])
         artist_infoa = get_topArtist(token_json['access_token'])
         artist_info = artist_infoa['items']
-        for i, item in enumerate(artist_infoa['items']):
-            print (i, item['name'])
-        #    artists.append(item['name'])
-        #print(artists)
+
+        for item in artist_info:
+            print (item['name'])
+            
         profile_img = user_info['images']
         return render_template("profile.html",user_json=user_info, profile_img=profile_img, artist_json=artist_info)
     # invalid state, abort
@@ -79,7 +79,6 @@ def get_topArtist(access_token):
     headers = {'Authorization': 'Bearer ' + access_token}
     response = requests.get("https://api.spotify.com/v1/me/top/artists?limit=50&offset=0", headers=headers)
     artist_json = response.json()
-    #print(artist_json)
     return artist_json
 
 def generateRandomString(len):
