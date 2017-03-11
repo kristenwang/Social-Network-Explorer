@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+  
+  <div class="container">
+  <h1>Displaying User Data</h1>
+  <p>Logged in as {{user_json['display_name']}}</p>
+  <div class="media">
+      <div class="pull-left">
+          <img class="media-object" width="150" src="{{profile_img[0]['url']}}" />
+      </div>
+      <div class="media-body">
+        <dl class="dl-horizontal">
+          <dt>Id</dt><dd>{{user_json['id']}}</dd>
+          <dt>Display name</dt><dd class="clearfix">{{user_json['display_name']}}</dd>
+          <dt>Country</dt><dd>{{user_json['country']}}</dd>
+          <dt>Followers</dt><dd>{{user_json['followers']['total']}}</dd>
+          <dt>Email</dt><dd>{{user_json['email']}}</dd>
+          <dt>Profile</dt><dd>{{user_json['href']}}</dd>
+        </dl>
+      </div>
+  </div>
+  <div class="artist">
+    <div class="artist-body">
+      <h2>Top Artists</h2>
+      <p id="demo"></p>
+      <p>{{artist_json[0]['name']}}</p>
+      <p>{{artist_json[1]['name']}}</p>
+      <p>{{artist_json[2]['name']}}</p>
+      <p>{{artist_json[3]['name']}}</p>
+      <p>{{artist_json[4]['name']}}</p>
+      <p>{{artist_json[5]['name']}}</p>
+      <p>{{artist_json[6]['name']}}</p>
+      <p>{{artist_json[7]['name']}}</p>
+      <p>{{artist_json[8]['name']}}</p>
+      <p>{{artist_json[9]['name']}}</p>
+      <p>{{artist_json[10]['name']}}</p>
+    </div>
+  </div>
+  <script>
+  var artists = "{{artist_json[1]['name']}}";
+  console.log(artists)
+  //document.getElementById("demo").innerHTML = artists;
+  </script>
+  {{state}}
+</div>
+</body>
+
+</html>
