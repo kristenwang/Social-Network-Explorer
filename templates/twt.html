@@ -1,0 +1,16 @@
+<!doctype html>
+<title>Search Results</title>
+<table class="table">
+    <thead>
+        <tr>
+             <td>Tweets</td>
+       </tr>
+    </thead>
+    <tbody>
+    {% for twt in twt_list %}
+        <tr>
+            <td>{{ twt.text }}</td>
+       </tr>
+    {% endfor %}
+    </tbody>
+</table>
