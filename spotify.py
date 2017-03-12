@@ -58,6 +58,7 @@ def callback():
         user_info = get_userInfo(token_json['access_token'])
         artist_infoa = get_topArtist(token_json['access_token'])
         artist_info = artist_infoa['items']
+        profile_img = user_info['images']
         url_list = []
         image_list = []
         related_artist_list=[]
