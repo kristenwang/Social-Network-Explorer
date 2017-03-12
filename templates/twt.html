@@ -23,12 +23,19 @@
 
 
 <div class="container-fluid">
-	<div class="row clearfix">
-    {% for twt in twt_list %}
+  {% for twt in twt_list %}
+    {%if (loop.index0 % 3)==0 %}
+    <div class="row clearfix">
+    {% endif %}
 		<div class="col-md-4 column">
-			<h2>
+      <div class="thumbnail">
+        {% if twt._json["entities"]["media"]|length>=1 %}
+         <a><img height="150" width="150" src="{{twt._json["entities"]["media"][0]["media_url"]}}"/></a>
+        {% endif %}
+			<h4>
 				{{twt._json["user"]["name"]}}
-			</h2>
+        <small>@{{twt._json["user"]["screen_name"]}}</small>
+			</h4>
 			<p>
 				{{ twt.text }}
 			<p>
@@ -38,10 +45,12 @@
          <a class="btn" href={{ twt._json["entities"]["urls"][0]["url"]}}>View details »</a>
          {% endif %}
 			</p>
+      </div>
 		</div>
-    {% endfor %}
-    <div class="clearfix visible-md-blockx"></div>
+  {%if (loop.index0 % 3)==2 %}
   </div>
+  {% endif %}
+{% endfor %}
 </div>
 
 
