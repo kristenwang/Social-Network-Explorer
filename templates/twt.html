@@ -12,14 +12,10 @@
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="jumbotron well">
-				<h1>
-					Get Tweets
-				</h1>
-				<p>
-					This is a template
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Back</a>
+				<h2 class="text-center">Get Tweets</h2>
+				<p class="text-center">This is a template</p>
+				<p class="text-right">
+					<a class="btn btn-primary btn-large" href="/">Back</a>
 				</p>
 			</div>
 		</div>
@@ -36,8 +32,10 @@
 			<p>
 				{{ twt.text }}
 			<p>
-        {% if twt._json["entities"]["urls"]|length>=1 %}
-				 <a class="btn" href={{ twt._json["entities"]["urls"][0]["url"]}}>View details »</a>
+        {% if twt._json["entities"]["media"]|length>=1 %}
+				 <a class="btn" href={{ twt._json["entities"]["media"][0]["url"]}}>View details »</a>
+        {% elif twt._json["entities"]["urls"]|length>=1 %}
+         <a class="btn" href={{ twt._json["entities"]["urls"][0]["url"]}}>View details »</a>
          {% endif %}
 			</p>
 		</div>
