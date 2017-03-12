@@ -60,13 +60,19 @@ def callback():
         artist_info = artist_infoa['items']
         url_list = []
         image_list = []
+        related_artist_list=[]
+        name_url=[]
         for item in artist_info:
-            print (item['name'])
             image_list.append(item['images'][1]['url'])
             url_list.append(urllib.parse.quote_plus(item['name']))
-
-        profile_img = user_info['images']
-        return render_template("profile.html",image_list=image_list,user_json=user_info, profile_img=profile_img, artist_json=artist_info, atrist_url=url_list)
+            related_artist_list.append(get_related_artist(item['id']))
+        for item in related_artist_list:
+            for name in item:
+                name_url.append(urllib.parse.quote_plus(name))
+        print(name_url)
+        #print (related_artist_dict[1][1])
+        #print(user_info)
+        return render_template("profile.html",name_url=name_url,related_artist_list=related_artist_list,image_list=image_list,user_json=user_info, profile_img=profile_img, artist_json=artist_info, atrist_url=url_list)
     # invalid state, abort
     else:
         abort(403)
@@ -103,6 +109,14 @@ def get_topArtist(access_token):
     response = requests.get("https://api.spotify.com/v1/me/top/artists?limit=50&offset=0", headers=headers)
     artist_json = response.json()
     return artist_json
+
+def get_related_artist(artist_id):
+    response = requests.get("https://api.spotify.com/v1/artists/"+ artist_id + "/related-artists")
+    related_artists = response.json()['artists']
+    related_artists_names=[]
+    for artist in related_artists:
+        related_artists_names.append(artist['name'])
+    return related_artists_names[0:5]
 
 def generateRandomString(len):
     return ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(len))
