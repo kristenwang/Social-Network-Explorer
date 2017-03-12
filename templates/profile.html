@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>User Profile</title>
+  <title>Spotify User Profile</title>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <meta charset="utf-8">
 </head>
@@ -9,40 +9,50 @@
 <body>
   
   <div class="container">
-  <h1>User Data</h1>
-  <p>Logged in as {{user_json['display_name']}}</p>
+  <h2>Spotify User: Logged in as {{user_json['display_name']}}</h2>
   <div class="media">
       <div class="pull-left">
-          <img class="media-object" width="100" src="{{profile_img[0]['url']}}" />
+          <img class="img-circle" width="80" src="{{profile_img[0]['url']}}" />
       </div>
       <div class="media-body">
         <dl class="dl-horizontal">
-          <dt>User Name</dt><dd class="clearfix">{{user_json['display_name']}}</dd>
           <dt>Country</dt><dd>{{user_json['country']}}</dd>
           <dt>Email</dt><dd>{{user_json['email']}}</dd>
         </dl>
       </div>
   </div>
   <p></p>
-  <div class="artist">
-    <div class="row">
-      <h2>Top Artists</h2>
-      <!--<dl class="col-md-4" id="demo">-->
-      {% for item in range(0, 50)%}
+  <h2>Your Favorite 25 Artists, With Their Related Artists</h2>
+      <!--<dl class="col-md-4" id="demo">
+      {% for item in range(0, 25)%}
          <div class="col-md-4">
-           <img width = "150" height = "150" src="{{image_list[item]}}"/>
-           <dt>{{item+1}} </dt><dd><a href={{"http://localhost:5000/twts/" + atrist_url[item]}} role="button">{{ artist_json[item]['name'] }}</a></dd>
+         <a href={{"http://localhost:5000/twts/" + atrist_url[item]}}><img width = "150" height = "150" src="{{image_list[item]}}"/></a>
+         {% for name in related_artist_list[item] %}
+         <a href="#" width="100" >{{name}}</a>
+         {% endfor %}
+         <dt>{{item+1}} {{ artist_json[item]['name'] }}</dt>
          </div>
       {% endfor %}
-      <!--</dl>-->
+      </dl>-->
+      <div class="row">
+        {% for item in range(0, 25)%}
+         <div class="col-sm-6 col-md-4">
+           <div class="thumbnail">
+              <a href={{"http://localhost:5000/twts/" + atrist_url[item]}}><img height="150" width="150" src="{{image_list[item]}}"/></a>
+              <div class="caption">
+                <h4>{{artist_json[item]['name']}}</h4>
+                {% for name in range(0, 5) %}
+                <a href={{"http://localhost:5000/twts/" + name_url[5*item+name]}}>{{related_artist_list[item][name]}} | </a>
+                {% endfor %}
+              </div>
+           </div>
+         </div>
+         {% endfor %}
+       </div>
     </div>
-  </div>
   <script>
-  console.log(artists)
   </script>
   {{state}}
-</div>
 </body>
 
 </html>
-
