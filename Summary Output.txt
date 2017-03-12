@@ -1,0 +1,53 @@
+User 1: Chuyang Wang
+Favorite Artists & Related Artists
+
+薛之謙
+['李榮浩', '胡彥斌', '陳勢安', 'G.E.M.', '胡夏']
+Ed Sheeran
+['James Bay', 'The Script', 'Birdy', 'Olly Murs', 'James Arthur']
+One Direction
+['The Vamps', 'Little Mix', 'The Wanted', 'Cher Lloyd', 'Jonas Brothers']
+Justin Hurwitz
+['Thomas Newman', 'James Horner', 'Alan Silvestri', 'James Newton Howard', 'Hans Zimmer']
+Coldplay
+['Keane', 'Snow Patrol', 'The Killers', 'James Blunt', 'The Fray']
+Bruno Mars
+['Jason Derulo', 'Justin Timberlake', 'Ne-Yo', 'Charlie Puth', 'Jessie J']
+OneRepublic
+['The Fray', 'The Script', 'Train', 'Lifehouse', 'Gavin DeGraw']
+Ryan Gosling
+['John Kapelos', 'Jason Grey', 'Daniel Clark', 'Andrew Francis', 'Sawa']
+The Weeknd
+['Frank Ocean', 'Miguel', 'A$AP Rocky', 'Jhene Aiko', 'Childish Gambino']
+Lady Gaga
+['Kesha', 'Katy Perry', 'Madonna', 'Gwen Stefani', 'Britney Spears']
+Drake
+['The Weeknd', 'Kendrick Lamar', 'Future', 'G-Eazy', 'Frank Ocean']
+The Chainsmokers
+['Zedd', 'Alesso', 'Martin Garrix', 'Steve Aoki', 'Galantis']
+Adele
+['Jessie J', 'Leona Lewis', 'Ellie Goulding', 'Emeli Sandé', 'Kelly Clarkson']
+The Strumbellas
+['The Head and the Heart', 'Houndmouth', 'Run River North', 'The Wind and The Wave', 'COIN']
+Passenger
+['James Bay', 'Ben Howard', 'Tom Odell', 'Vance Joy', 'Benjamin Francis Leftwich']
+Sam Smith
+['Jess Glynne', 'Ella Henderson', 'Jessie J', 'James Bay', 'Ella Eyre']
+David Arnold
+['John Ottman', 'Brian Tyler', 'John Powell', 'Marco Beltrami', 'Alan Silvestri']
+Rihanna
+['The Pussycat Dolls', 'Ciara', 'Fergie', 'Beyoncé', "Destiny's Child"]
+Justin Bieber
+['Cody Simpson', 'Jason Derulo', 'Miley Cyrus', 'Selena Gomez', 'Nick Jonas']
+Jason Mraz
+['John Mayer', 'Donavon Frankenreiter', 'Gavin DeGraw', 'Five For Fighting', 'James Morrison']
+Katy Perry
+['Kesha', 'Gwen Stefani', 'Kelly Clarkson', 'Lady Gaga', 'Meghan Trainor']
+John Mayer
+['Jason Mraz', 'Gavin DeGraw', 'Jack Johnson', 'Donavon Frankenreiter', 'John Mayer Trio']
+Shawn Mendes
+['ZAYN', 'The Vamps', 'Alessia Cara', 'Hailee Steinfeld', 'MKTO']
+Christina Perri
+['Sara Bareilles', 'Colbie Caillat', 'Kelly Clarkson', 'Ella Henderson', 'Christina Grimmie']
+Ellie Goulding
+['Carly Rae Jepsen', 'Jessie J', 'Charli XCX', 'Rita Ora', 'Leona Lewis']
