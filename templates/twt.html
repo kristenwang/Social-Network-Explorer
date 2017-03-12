@@ -1,18 +1,52 @@
-<!doctype html>
-<title>Search Results</title>
-<table class="table">
-    <thead>
-        <tr>
-             <td>Num. </td>
-             <td>Tweets</td>
-       </tr>
-    </thead>
-    <tbody>
-    {% for i in range(20) %}
-        <tr>
-            <td>{{ i+1 }}</td>
-            <td>{{ twt_list[i].text }}</td>
-       </tr>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Get Tweets</title>
+   <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="jumbotron well">
+				<h1>
+					Get Tweets
+				</h1>
+				<p>
+					This is a template
+				</p>
+				<p>
+					<a class="btn btn-primary btn-large" href="#">Back</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+<div class="container-fluid">
+	<div class="row clearfix">
+    {% for twt in twt_list %}
+		<div class="col-md-4 column">
+			<h2>
+				{{twt._json["user"]["name"]}}
+			</h2>
+			<p>
+				{{ twt.text }}
+			<p>
+        {% if twt._json["entities"]["urls"]|length>=1 %}
+				 <a class="btn" href={{ twt._json["entities"]["urls"][0]["url"]}}>View details »</a>
+         {% endif %}
+			</p>
+		</div>
     {% endfor %}
-    </tbody>
-</table>
+    <div class="clearfix visible-md-blockx"></div>
+  </div>
+</div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<title>Search Results</title>
+<table class="table">
+    <thead>
+        <tr>
+             <td>Num. </td>
+             <td>Tweets</td>
+       </tr>
+    </thead>
+    <tbody>
+    {% for i in range(20) %}
+        <tr>
+            <td>{{ i+1 }}</td>
+            <td>{{ twt_list[i].text }}</td>
+       </tr>
+    {% endfor %}
+    </tbody>
+</table>

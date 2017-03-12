@@ -76,7 +76,7 @@ def callback():
     # invalid state, abort
     else:
         abort(403)
-        
+
 @app.route("/twts/")
 @app.route("/twts/<name>/")
 def twts(name = None):
@@ -123,7 +123,7 @@ def generateRandomString(len):
 
 def get_tweets(keyword):
     twt_list = []
-    twt_list = api.search(q = keyword, count = 20)
+    twt_list = api.search(q = keyword, count = 20, result_type = "mixed")
     return twt_list
 
 if __name__ == "__main__":
