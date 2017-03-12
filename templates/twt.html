@@ -12,8 +12,8 @@
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<div class="jumbotron well">
-				<h2 class="text-center">Get Tweets</h2>
-				<p class="text-center">This is a template</p>
+				<h2 class="text-center">Get Latest and Hotest Tweets of Your Fav Star</h2>
+				<p class="text-center"></p>
 				<p class="text-right">
 					<a class="btn btn-primary btn-large" href="/">Back</a>
 				</p>
@@ -30,7 +30,7 @@
 		<div class="col-md-4 column">
       <div class="thumbnail">
         {% if twt._json["entities"]["media"]|length>=1 %}
-         <a><img height="150" width="150" src="{{twt._json["entities"]["media"][0]["media_url"]}}"/></a>
+         <a><img height="200" width="200" src="{{twt._json["entities"]["media"][0]["media_url"]}}"/></a>
         {% endif %}
 			<h4>
 				{{twt._json["user"]["name"]}}
