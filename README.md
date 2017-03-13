@@ -1,5 +1,7 @@
 # Social-Network-Explorer
 
+Yan Jiang, Chuyang Wang
+
 Tweets About Your Favorite Artists In Music
 
 We used Spotify Web API and Twitter API in this assignment. We only need user’s authorization on Spotify. But we do need the user to be an active Spotify user with  listening history longer than 6 months.
