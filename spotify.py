@@ -63,8 +63,9 @@ def callback():
         image_list = []
         related_artist_list=[]
         name_url=[]
+        print(artist_info)
         for item in artist_info:
-            if len(item['images'][1]['url'])>2:
+            if len(item['images'])>1:
                 image_list.append(item['images'][1]['url'])
             else:
                 image_list.append('https://cdn4.iconfinder.com/data/icons/eldorado-user/40/user-128.png')
