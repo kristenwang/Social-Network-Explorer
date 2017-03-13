@@ -51,3 +51,55 @@ Christina Perri
 ['Sara Bareilles', 'Colbie Caillat', 'Kelly Clarkson', 'Ella Henderson', 'Christina Grimmie']
 Ellie Goulding
 ['Carly Rae Jepsen', 'Jessie J', 'Charli XCX', 'Rita Ora', 'Leona Lewis']
+
+User 2:
+The Weeknd
+['Frank Ocean', 'Miguel', 'A$AP Rocky', 'Jhene Aiko', 'Childish Gambino']
+Daft Punk
+['The Chemical Brothers', 'Justice', 'Kavinsky', 'Digitalism', 'Fatboy Slim']
+Drake
+['The Weeknd', 'Kendrick Lamar', 'Future', 'G-Eazy', 'Frank Ocean']
+Bee Gees
+['Andy Gibb', 'Chicago', 'Barry Manilow', 'Carpenters', 'Olivia Newton-John']
+Ruth B.
+['Alessia Cara', 'Hailee Steinfeld', 'Maggie Lindemann', 'Shawn Mendes', 'Jasmine Thompson']
+Calvin Harris
+['Alesso', 'Zedd', 'Galantis', 'Steve Aoki', 'Afrojack']
+Louis Prima
+['Keely Smith', 'Bobby Darin', 'The Andrews Sisters', 'Louis Jordan & His Tympany Five', 'Sammy Davis Jr.']
+FRENSHIP
+['Starley', 'Shoffy', 'A R I Z O N A', 'Terror Jr', 'Maty Noyes']
+Audiomachine
+['Future World Music', 'Brand X Music', 'Epic Score', 'Thomas Bergersen', 'Two Steps from Hell']
+Major Lazer
+['Dillon Francis', 'Steve Aoki', 'Galantis', 'Deorro', 'R3hab']
+Coldplay
+['Keane', 'Snow Patrol', 'The Killers', 'James Blunt', 'The Fray']
+Justin Timberlake
+['Ne-Yo', 'Pharrell Williams', 'Robin Thicke', 'Gwen Stefani', 'Ciara']
+Marc Streitenfeld
+['Atli Örvarsson', 'Harald Kloser', 'John Ottman', 'Marco Beltrami', 'Harry Gregson-Williams']
+Imagine Dragons
+['WALK THE MOON', 'fun.', 'OneRepublic', 'Neon Trees', 'American Authors']
+OneRepublic
+['The Fray', 'The Script', 'Train', 'Lifehouse', 'Gavin DeGraw']
+Mystery Skulls
+['Studio Killers', 'Ken Ashcorp', 'Anamanaguchi', 'Tally Hall', 'Starbomb']
+Lana Del Rey
+['Lorde', 'Marina and the Diamonds', 'Lykke Li', 'Sky Ferreira', 'Florence + The Machine']
+The Chainsmokers
+['Zedd', 'Alesso', 'Steve Aoki', 'Martin Garrix', 'Galantis']
+Sean Paul
+['Beenie Man', 'Mr. Vegas', 'Shaggy', 'Elephant Man', 'Gyptian']
+Yann Tiersen
+['Michael Nyman', "Dustin O'Halloran", 'Ludovico Einaudi', 'René Aubry', 'Max Richter']
+London Music Works
+['The City of Prague Philharmonic Orchestra', 'Steve Mazzaro', 'Mark Ayres', 'Steve Jablonsky', 'Yvonne S. Moriarty']
+Twenty One Pilots
+['The Neighbourhood', 'Panic! At The Disco', 'Halsey', 'X Ambassadors', 'AWOLNATION']
+Capital Cities
+['Penguin Prison', 'Atlas Genius', 'St. Lucia', 'Foster The People', 'Youngblood Hawke']
+Bruno Mars
+['Jason Derulo', 'Justin Timberlake', 'Ne-Yo', 'Charlie Puth', 'Jessie J']
+Juanes
+['Bacilos', 'Diego Torres', 'Alejandro Sanz', 'Maná', 'Fonseca']
