@@ -63,7 +63,7 @@ def callback():
         image_list = []
         related_artist_list=[]
         name_url=[]
-        print(artist_info)
+        artist_num=len(artist_info)
         for item in artist_info:
             if len(item['images'])>1:
                 image_list.append(item['images'][1]['url'])
@@ -71,13 +71,12 @@ def callback():
                 image_list.append('https://cdn4.iconfinder.com/data/icons/eldorado-user/40/user-128.png')
             url_list.append(urllib.parse.quote_plus(item['name']))
             related_artist_list.append(get_related_artist(item['id']))
+            print(item['name'])
+            print(get_related_artist(item['id']))
         for item in related_artist_list:
             for name in item:
                 name_url.append(urllib.parse.quote_plus(name))
-        print(name_url)
-        #print (related_artist_dict[1][1])
-        #print(user_info)
-        return render_template("profile.html",name_url=name_url,related_artist_list=related_artist_list,image_list=image_list,user_json=user_info, profile_img=profile_img, artist_json=artist_info, atrist_url=url_list)
+        return render_template("profile.html",artist_num=artist_num,name_url=name_url,related_artist_list=related_artist_list,image_list=image_list,user_json=user_info, profile_img=profile_img, artist_json=artist_info, atrist_url=url_list)
     # invalid state, abort
     else:
         abort(403)
