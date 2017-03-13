@@ -64,7 +64,10 @@ def callback():
         related_artist_list=[]
         name_url=[]
         for item in artist_info:
-            image_list.append(item['images'][0]['url'])
+            if item['images'][1]['url']:
+                image_list.append(item['images'][1]['url'])
+            elif not item['images'][1]['url']:
+                image_list.append('https://cdn4.iconfinder.com/data/icons/eldorado-user/40/user-128.png')
             url_list.append(urllib.parse.quote_plus(item['name']))
             related_artist_list.append(get_related_artist(item['id']))
         for item in related_artist_list:
