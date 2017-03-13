@@ -7,7 +7,7 @@ import string
 import random
 
 SPOTIFY_APP_ID = 'b9d97275936943d6965ffbdd5e402238'
-SPOTIFY_REDIRECT_URI = 'http://localhost:5000/callback'
+SPOTIFY_REDIRECT_URI = 'http://snexplorer.herokuapp.com/callback'
 SPOTIFY_CLIENT_SECRET = '8ac92255fb684073b02f61e38f96cc34'
 RANDOM_STATE = ''
 
