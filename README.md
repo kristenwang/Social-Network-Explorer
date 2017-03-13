@@ -1,5 +1,4 @@
 # Social-Network-Explorer
-# REPORT
 
 Tweets About Your Favorite Artists In Music
 
