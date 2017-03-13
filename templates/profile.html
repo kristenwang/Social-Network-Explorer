@@ -12,10 +12,17 @@
   <h2>Spotify User: Logged in as {{user_json['display_name']}}</h2>
   <div class="media">
       <div class="pull-left">
-          <img class="img-circle" width="80" src="{{profile_img[0]['url']}}" />
+        {% if profile_img[0]['url'] %}
+        <img class="img-circle" width="80" src="{{profile_img[0]['url']}}" />
+        {% elif not profile_img[0]['url'] %}
+        <img class="img-circle" width="80" src="https://cdn4.iconfinder.com/data/icons/eldorado-user/40/user-128.png" />
+        {% endif %}
       </div>
       <div class="media-body">
         <dl class="dl-horizontal">
+          <p></p>
+          <p></p>
+          <p></p>
           <dt>Country</dt><dd>{{user_json['country']}}</dd>
           <dt>Email</dt><dd>{{user_json['email']}}</dd>
         </dl>
@@ -23,35 +30,24 @@
   </div>
   <p></p>
   <h2>Your Favorite 25 Artists, With Their Related Artists</h2>
-      <!--<dl class="col-md-4" id="demo">
-      {% for item in range(0, 25)%}
-         <div class="col-md-4">
-         <a href={{"http://localhost:5000/twts/" + atrist_url[item]}}><img width = "150" height = "150" src="{{image_list[item]}}"/></a>
-         {% for name in related_artist_list[item] %}
-         <a href="#" width="100" >{{name}}</a>
-         {% endfor %}
-         <dt>{{item+1}} {{ artist_json[item]['name'] }}</dt>
-         </div>
-      {% endfor %}
-      </dl>-->
       <div class="row">
         {% for item in range(0, 25)%}
          <div class="col-sm-6 col-md-4">
            <div class="thumbnail">
-              <a href={{"http://localhost:5000/twts/" + atrist_url[item]}}><img height="150" width="150" src="{{image_list[item]}}"/></a>
+              <a href={{"/twts/" + atrist_url[item]}}><img height="110" width="110" src="{{image_list[item]}}"/></a>
               <div class="caption">
                 <h4>{{artist_json[item]['name']}}</h4>
                 {% for name in range(0, 5) %}
-                <a href={{"http://localhost:5000/twts/" + name_url[5*item+name]}}>{{related_artist_list[item][name]}} | </a>
+                <a style="font-size:14px" href={{"/twts/" + name_url[5*item+name]}}>{{related_artist_list[item][name]}} | </a>
                 {% endfor %}
               </div>
            </div>
          </div>
          {% endfor %}
        </div>
-    </div>
   <script>
   </script>
+  </div>
   {{state}}
 </body>
 
