@@ -2,7 +2,7 @@
 
 Yan Jiang, Chuyang Wang
 
-# To run this app locally, download the code. Go to the directory of the downloaded folder, run “pip install -r requirements.txt” and then run “python spotify.py” with python 3.5.2.
+<strong>To run this app locally, download the code. Go to the directory of the downloaded folder, run “pip install -r requirements.txt” and then run “python spotify.py” with python 3.5.2.</strong>
 
 
 Tweets About Your Favorite Artists In Music
