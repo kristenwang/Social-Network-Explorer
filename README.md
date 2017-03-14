@@ -2,6 +2,9 @@
 
 Yan Jiang, Chuyang Wang
 
+To run this app locally, download the code. Go to the directory of the downloaded folder, run “pip install -r requirements.txt” and then run “python spotify.py” with python 3.5.2.
+
+
 Tweets About Your Favorite Artists In Music
 
 We used Spotify Web API and Twitter API in this assignment. We only need user’s authorization on Spotify. But we do need the user to be an active Spotify user with  listening history longer than 6 months.
